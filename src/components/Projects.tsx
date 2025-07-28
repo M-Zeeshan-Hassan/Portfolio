@@ -21,13 +21,13 @@ const projectsData = [
       "React Router",
       "React Query",
     ],
-    // demoUrl: "https://kalpsenghani1.netlify.app/",
-    // githubUrl: "https://github.com/kalpsenghani/portfolio-admin-dashboard",
+    demoUrl: "https://mzh-portfolio.netlify.app/",
+    githubUrl: "https://github.com/M-Zeeshan-Hassan/Portfolio",
   },
 
   {
     id: 2,
-    title: "YouTube Analyzer",
+    title: "SmartTube AI",
     description:
       "Compares short vs long videos on YouTube using charts and insights to help creators improve content.",
     image: "/lovable-uploads/YT-Analyzer.png",
@@ -42,8 +42,8 @@ const projectsData = [
       "Framer Motion",
       "Recharts",
     ],
-    // demoUrl: undefined,
-    // githubUrl: "https://github.com/kalpsenghani/YT_Analyzer",
+    demoUrl: undefined,
+    githubUrl: undefined,
   },
   {
     id: 3,
