@@ -27,7 +27,7 @@ const projectsData = [
 
   {
     id: 2,
-    title: "SmartTube AI",
+    title: "AI Smart Tube",
     description:
       "Compares short vs long videos on YouTube using charts and insights to help creators improve content.",
     image: "/lovable-uploads/s-tube.png",
