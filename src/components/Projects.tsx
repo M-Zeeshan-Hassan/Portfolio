@@ -30,7 +30,7 @@ const projectsData = [
     title: "SmartTube AI",
     description:
       "Compares short vs long videos on YouTube using charts and insights to help creators improve content.",
-    image: "/lovable-uploads/YT-Analyzer.png",
+    image: "/lovable-uploads/s-tube.png",
     tags: [
       "React",
       "TypeScript",
@@ -50,7 +50,7 @@ const projectsData = [
     title: "AI Career Insight",
     description:
       "AI-powered web app analyzes resumes (GPT-4) for job role suggestions, improvement tips, and interview questions, storing past results.",
-    image: "/lovable-uploads/Job-Advisor.png",
+    image: "/lovable-uploads/career.png",
     tags: [
       "React.js",
       "Tailwind CSS",

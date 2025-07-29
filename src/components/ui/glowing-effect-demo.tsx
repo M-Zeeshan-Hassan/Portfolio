@@ -1,99 +1,152 @@
 "use client";
 
 import React from "react";
-import { Box, Lock, Search, Settings, Sparkles, Github, ExternalLink } from "lucide-react";
+import {
+  Box,
+  Lock,
+  Search,
+  Settings,
+  Sparkles,
+  Github,
+  ExternalLink,
+} from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // Tech icon mapping (from Technologies.tsx)
 const techIconMap: Record<string, string> = {
-  JavaScript: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  TypeScript: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-  Python: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  Java: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-  'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-  'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
-  HTML: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  HTML5: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  CSS: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-  CSS3: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-  React: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-  Angular: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
-  'Tailwind CSS': 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
-  Redux: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
-  Bootstrap: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
-  'Material UI': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg',
-  jQuery: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg',
-  'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  'Express.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-  Django: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
-  TensorFlow: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
-  FastAPI: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
-  GraphQL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-  REST: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/api/api-original-wordmark.svg',
-  Supabase: 'https://avatars.githubusercontent.com/u/54469796?s=200&v=4',
-  MongoDB: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-  PostgreSQL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-  Postgres: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-  MySQL: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-  SQLite: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',
-  Redis: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
-  Firebase: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-  Docker: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-  AWS: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
-  Azure: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
-  Git: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-  Vercel: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png',
-  Netlify: 'https://www.netlify.com/v3/img/components/logomark.png',
-  Jenkins: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg',
-  Linux: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
-  LLM: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  OpenAI: 'https://seeklogo.com/images/O/openai-logo-8B9BFEDC26-seeklogo.com.png',
-  Agents: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  Timer: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  Productivity: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  Stats: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  IoT: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  'WebSocket': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'D3.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Weather API': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'Forecast': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  JavaScript:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  TypeScript:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  Python:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  "C++":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  "C#": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+  HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  HTML5:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  React:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "Next.js":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  Angular:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+  "Tailwind CSS":
+    "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+  Redux:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  Bootstrap:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+  "Material UI":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+  jQuery:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
+  "Node.js":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  "Express.js":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  Django:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+  TensorFlow:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+  FastAPI:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+  GraphQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+  REST: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/api/api-original-wordmark.svg",
+  Supabase: "https://avatars.githubusercontent.com/u/54469796?s=200&v=4",
+  MongoDB:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  PostgreSQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  Postgres:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  MySQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  SQLite:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
+  Redis:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+  Firebase:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+  Docker:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  AWS: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+  Azure:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+  Git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  Vercel:
+    "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+  Netlify: "https://www.netlify.com/v3/img/components/logomark.png",
+  Jenkins:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
+  Linux:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+  LLM: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  OpenAI:
+    "https://seeklogo.com/images/O/openai-logo-8B9BFEDC26-seeklogo.com.png",
+  Agents:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  Timer:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  Productivity:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  Stats:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  IoT: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  WebSocket:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  "D3.js":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  "Weather API":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  Forecast:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 };
 
 // Micro projects data (from MicroProjects.tsx, simplified)
 const microProjectsData = [
-   {
+  {
     title: "AI Career Insight",
-    description: "A full stack web application that analyzes resumes using AI to provide job role suggestions, resume improvement tips, and interview preparation questions. Upload your resume for AI analysis powered by OpenAI GPT-4, receive personalized recommendations, top job role suggestions, resume tips, and interview questions tailored to your experience. Stores previous analysis results for future reference.",
-    image: "/lovable-uploads/Job-Advisor.png",
+    description:
+      "A full stack web application that analyzes resumes using AI to provide job role suggestions, resume improvement tips, and interview preparation questions. Upload your resume for AI analysis powered by OpenAI GPT-4, receive personalized recommendations, top job role suggestions, resume tips, and interview questions tailored to your experience. Stores previous analysis results for future reference.",
+    image: "/lovable-uploads/career.png",
     tags: ["Axios", "OpenAI GPT-4", "React", "Node.js"],
     demoUrl: "https://yourjobadvisor.netlify.app/",
-    githubUrl: "https://github.com/M-Zeeshan-Hassan/AI-Career-Insight"
+    githubUrl: "https://github.com/M-Zeeshan-Hassan/AI-Career-Insight",
   },
   {
     title: "EventRaze",
     description: "Event management platform with admin dashboard.",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     tags: ["PHP", "Postgres", "HTML", "CSS", "JavaScript", "XAMPP"],
     demoUrl: undefined,
-    githubUrl: "https://github.com/kalpsenghani/EventRaze"
+    githubUrl: "https://github.com/kalpsenghani/EventRaze",
   },
   {
     title: "Tehzeeb Baker's Web Clone",
-    description: "AI-powered platform for smart task organization and productivity.",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description:
+      "AI-powered platform for smart task organization and productivity.",
+    image:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     tags: ["AI", "React", "Node.js", "NLP", "Machine Learning"],
     demoUrl: "https://example.com/demo1",
-    githubUrl: "https://github.com/kalpsenghani/ai-task-manager"
+    githubUrl: "https://github.com/kalpsenghani/ai-task-manager",
   },
-  
+
   {
     title: "Weather Forecast",
     description: "Weather app with real-time data and forecasts.",
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     tags: ["React", "OpenWeatherMap API", "CSS", "Weather API", "Forecast"],
     demoUrl: "https://weather-app-kalpsenghani.netlify.app/",
-    githubUrl: "https://github.com/kalpsenghani/Weather-App"
+    githubUrl: "https://github.com/kalpsenghani/Weather-App",
   },
   // {
   //   title: "YouTube Short VS Long Analyzer",
@@ -111,17 +164,22 @@ const microProjectsData = [
   //   demoUrl: "https://example.com/pomodoro-demo",
   //   githubUrl: "https://github.com/example/pomodoro-timer"
   // },
- 
-].filter(project => project.title !== "AI Content Platform");
+].filter((project) => project.title !== "AI Content Platform");
 
 export default function GlowingEffectDemo() {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
       {microProjectsData.map((project, idx) => (
-        <GridItem key={project.title} project={{
-          ...project,
-          image: project.image && project.image.startsWith('/') ? 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80' : project.image
-        }} />
+        <GridItem
+          key={project.title}
+          project={{
+            ...project,
+            image:
+              project.image && project.image.startsWith("/")
+                ? "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+                : project.image,
+          }}
+        />
       ))}
     </ul>
   );
@@ -147,9 +205,9 @@ const GridItem = ({ project }: GridItemProps) => {
         className="relative h-full rounded-2xl border-2 border-white/30 hover:border-blue-400 transition-colors duration-300 p-4 overflow-hidden shadow-2xl group"
         style={{
           backgroundImage: `url(${project.image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <GlowingEffect
@@ -173,7 +231,7 @@ const GridItem = ({ project }: GridItemProps) => {
             </div>
             {/* Tech stack logos - vertical column, glassmorphism style */}
             <div className="flex flex-col gap-1 items-end justify-start min-w-[2rem]">
-              {project.tags.map((tag) => (
+              {project.tags.map((tag) =>
                 techIconMap[tag] ? (
                   <div
                     key={tag}
@@ -184,11 +242,11 @@ const GridItem = ({ project }: GridItemProps) => {
                       src={techIconMap[tag]}
                       alt={tag}
                       className="w-5 h-5 object-contain"
-                      style={{ filter: 'none' }}
+                      style={{ filter: "none" }}
                     />
                   </div>
                 ) : null
-              ))}
+              )}
             </div>
           </div>
           {/* GitHub and Live buttons */}
@@ -220,4 +278,4 @@ const GridItem = ({ project }: GridItemProps) => {
       </div>
     </li>
   );
-}; 
+};
