@@ -70,10 +70,9 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Weather Forecast",
+    title: "The Real Weather",
     description: "Weather app with real-time data and forecasts.",
-    image:
-      "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: "/lovable-uploads/weather.png",
     tags: ["React", "CSS", "JavaScript", "OpenWeatherMap API"],
     demoUrl: "https://the-real-weather.netlify.app/",
     githubUrl: "https://github.com/M-Zeeshan-Hassan/Weather-App",
