@@ -25,19 +25,10 @@ const timelineData: TimelineItem[] = [
     year: "January – April , 2024",
     title: "Web Developer, Freelance Work",
     description: `• Developed and maintained websites using JavaScript and SQL Server.  
-• Worked on backend integration with REST APIs to ensure smooth data communication.  
-• Enhanced existing website features for better functionality and user experience.`,
+• Worked on backend integration with REST APIs to ensure smooth data communication.`,
     type: "experience",
   },
-  // {
-  //   id: 3,
-  //   year: "2022 - 2025",
-  //   title:
-  //     "Advanced Diploma in Computer Programming & Analysis, George Brown College",
-  //   description:
-  //     "Focused on full stack development, AI, cloud computing, and mobile app development. Built multiple academic and personal projects using modern technologies.",
-  //   type: "education",
-  // },
+
 ];
 
 const About = () => {
@@ -75,51 +66,7 @@ const About = () => {
                 {" "}
                to understand how servers and databases work together in full-stack applications.
               </p>
-              {/* <h3 className="text-xl font-semibold mt-8 mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
-                Certifications
-              </h3> */}
-              {/* <div className="flex flex-col gap-4">
-                <a
-                  href="https://www.coursera.org/account/accomplishments/specialization/LI5Q0UI157UD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-black/30 border border-blue-500/20 hover:bg-blue-900/20 transition"
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-                    alt="Google Data Analytics"
-                    className="w-8 h-8"
-                  />
-                  <div>
-                    <div className="font-semibold text-blue-400">
-                      Google Data Analytics Professional Certificate
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Data Analytics Focus
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="https://www.credly.com/badges/6366a28e-790a-4f83-9825-308fd4b1ed07/public_url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg bg-black/30 border border-blue-500/20 hover:bg-blue-900/20 transition"
-                >
-                  <img
-                    src="https://www.google.com/imgres?q=ibm%20logo%20svg&imgurl=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Ffree%2Fpng-256%2Ffree-ibm-logo-icon-download-in-svg-png-gif-file-formats--brand-company-brands-pack-logos-icons-2284974.png&imgrefurl=https%3A%2F%2Ficonscout.com%2Ffree-icon%2Fibm-2752157_2284974&docid=LhVFGlKx0-DrXM&tbnid=yEIptWpnccv7WM&vet=12ahUKEwiDv_eH3LeOAxXflIkEHe-TEnYQM3oECG8QAA..i&w=256&h=256&hcb=2&ved=2ahUKEwiDv_eH3LeOAxXflIkEHe-TEnYQM3oECG8QAA"
-                    alt="IBM Data Science"
-                    className="w-8 h-8"
-                  />
-                  <div>
-                    <div className="font-semibold text-blue-400">
-                      IBM Data Science Professional Certificate
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Data Science Focus
-                    </div>
-                  </div>
-                </a>
-              </div> */}
+             
             </CardContent>
           </Card>
         </div>

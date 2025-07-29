@@ -79,19 +79,7 @@ const Navbar = () => {
           </div>
 
           {/* Contact Button */}
-          {/* <div className="hidden md:block">
-            <Button
-              className="px-8 py-2 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-400 hover:via-purple-400 hover:to-pink-400 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200"
-              asChild
-            >
-              <a href="#contact">
-                <span className="relative flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact
-                </span>
-              </a>
-            </Button>
-          </div> */}
+          
 
           <div className="hidden md:block">
             <Button
