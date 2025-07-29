@@ -43,7 +43,7 @@ const certificatesData = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "SQL and Relational Databases 101",
     issuer: "IBM (Cognitive Class)",
     issueDate: "May 2024",

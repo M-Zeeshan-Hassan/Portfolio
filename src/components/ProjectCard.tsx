@@ -32,8 +32,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -50,59 +48,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       viewport={{ once: true, amount: 0.1 }}
       className="h-full"
     >
-      <PinContainer title={project.title}>
-        <Card className="overflow-hidden transition-all duration-300 h-full flex flex-col bg-gray-900/70 border-gray-800 rounded-xl relative">
-          <div
-            className="relative group"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
+      <div title={project.title}>
+        <Card className="overflow-hidden transition-all duration-300 h-full flex flex-col bg-gray-900/70 border-gray-800 rounded-xl">
+          <div className="relative">
             <img
               src={project.image}
               alt={project.title}
-              className={`rounded-xl object-cover w-full h-44 transition-all duration-300 ${
-                hovered ? "blur-sm brightness-75" : ""
-              }`}
+              className="rounded-xl object-cover w-full h-44"
             />
-            {/* Overlay buttons on hover */}
-            {hovered && (
-              <div className="absolute inset-0 flex items-center justify-center gap-4">
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-2 rounded-lg bg-[#10151a] text-white font-semibold shadow-lg border border-transparent hover:text-[#7D6DE2] transition-colors duration-200"
-                    style={{ transition: "color 0.2s" }}
-                  >
-                    <ExternalLink
-                      size={20}
-                      color="#fff"
-                      style={{ transition: "color 0.2s" }}
-                      className="group-hover:text-[#7D6DE2]"
-                    />
-                    Demo
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-2 rounded-lg bg-gray-800 text-white font-semibold shadow-lg border border-transparent hover:text-[#7D6DE2] transition-colors duration-200"
-                    style={{ transition: "color 0.2s" }}
-                  >
-                    <Github
-                      size={20}
-                      color="#fff"
-                      style={{ transition: "color 0.2s" }}
-                      className="group-hover:text-[#7D6DE2]"
-                    />
-                    Source
-                  </a>
-                )}
-              </div>
-            )}
           </div>
 
           <CardHeader>
@@ -127,8 +80,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               {project.description}
             </CardDescription>
           </CardContent>
+
+          <CardFooter className="flex justify-between gap-4 mt-auto">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#10151a] text-white font-medium shadow border hover:text-[#7D6DE2] transition-colors duration-200"
+              >
+                <ExternalLink size={18} />
+                Demo
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-white font-medium shadow border hover:text-[#7D6DE2] transition-colors duration-200"
+              >
+                <Github size={18} />
+                Source
+              </a>
+            )}
+          </CardFooter>
         </Card>
-      </PinContainer>
+      </div>
     </motion.div>
   );
 };
