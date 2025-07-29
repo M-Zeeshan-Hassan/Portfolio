@@ -17,7 +17,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const textArray = Array.isArray(text) ? text : [text];
+  const textArray = React.useMemo(() => Array.isArray(text) ? text : [text], [text]);
 
   useEffect(() => {
     if (once && currentText === textArray[0]) return;
