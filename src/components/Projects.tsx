@@ -42,8 +42,8 @@ const projectsData = [
       "Framer Motion",
       "Recharts",
     ],
-    demoUrl: undefined,
-    githubUrl: undefined,
+    demoUrl: "https://smart-ai-tube.vercel.app/",
+    githubUrl: "https://github.com/M-Zeeshan-Hassan/Smart-AI-Tube",
   },
   {
     id: 3,
