@@ -75,7 +75,7 @@ const projectsData = [
   {
     id: 5,
     title: "Camp & Fire",
-    description: "Event management platform with admin dashboard.",
+    description: "Camping gear store offering good outdoor equipment for great adventures.",
     image: "/lovable-uploads/Camp.png",
     tags: ["React", "CSS", "JavaScript", "Material UI"],
     demoUrl: "https://camp-and-fire.netlify.app/",
