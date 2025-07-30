@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 interface FloatingParticlesProps {
-  children?: any;
+  children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
   particleCount?: number;
@@ -20,7 +20,7 @@ interface FloatingParticlesProps {
 
 export const FloatingParticles = (props: FloatingParticlesProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const particleCount = props.particleCount || 30;
   const rangeY = props.rangeY || 100;
   const baseSpeed = props.baseSpeed || 0.3;
@@ -31,13 +31,55 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
   const backgroundColor = props.backgroundColor || "#0a0a23";
   const floatRange = props.floatRange || 50;
   const rotationSpeed = props.rotationSpeed || 0.02;
-  let particles: any[] = [];
+  type Particle = {
+    x: number;
+    y: number;
+    radius: number;
+    speed: number;
+    hue: number;
+    alpha: number;
+    floatOffset: number;
+    rotation: number;
+    originalX: number;
+    originalY: number;
+  };
+
+  let particles: Particle[] = [];
 
   // Utility functions
   const rand = (min: number, max: number): number =>
     Math.random() * (max - min) + min;
 
-  const setup = () => {
+  const initParticles = React.useCallback(
+    (canvas: HTMLCanvasElement) => {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        const radius = rand(baseRadius, baseRadius + rangeRadius);
+        const x = rand(radius, canvas.width - radius);
+        const y = rand(radius, canvas.height - radius);
+        const speed = rand(baseSpeed, baseSpeed + rangeSpeed);
+        const hue = baseHue + rand(-40, 40);
+        const alpha = rand(0.4, 0.9);
+        const floatOffset = rand(0, Math.PI * 2);
+        particles.push({
+          x,
+          y,
+          radius,
+          speed,
+          hue,
+          alpha,
+          floatOffset,
+          rotation: 0,
+          originalX: x,
+          originalY: y,
+        });
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    },
+    [particleCount, baseRadius, rangeRadius, baseSpeed, rangeSpeed, baseHue]
+  );
+
+  const setup = React.useCallback(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (canvas && container) {
@@ -48,32 +90,7 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
         draw(canvas, ctx);
       }
     }
-  };
-
-  const initParticles = (canvas: HTMLCanvasElement) => {
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-      const radius = rand(baseRadius, baseRadius + rangeRadius);
-      const x = rand(radius, canvas.width - radius);
-      const y = rand(radius, canvas.height - radius);
-      const speed = rand(baseSpeed, baseSpeed + rangeSpeed);
-      const hue = baseHue + rand(-40, 40);
-      const alpha = rand(0.4, 0.9);
-      const floatOffset = rand(0, Math.PI * 2);
-      particles.push({
-        x,
-        y,
-        radius,
-        speed,
-        hue,
-        alpha,
-        floatOffset,
-        rotation: 0,
-        originalX: x,
-        originalY: y,
-      });
-    }
-  };
+  }, [initParticles]);
 
   const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -81,34 +98,49 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Draw and animate particles
-    for (let particle of particles) {
+    for (const particle of particles) {
       // Update rotation
       particle.rotation += rotationSpeed;
-      
+
       // Floating motion
       const time = Date.now() * 0.001;
-      particle.x = particle.originalX + Math.sin(time + particle.floatOffset) * floatRange;
-      particle.y = particle.originalY + Math.cos(time + particle.floatOffset) * floatRange * 0.5;
+      particle.x =
+        particle.originalX + Math.sin(time + particle.floatOffset) * floatRange;
+      particle.y =
+        particle.originalY +
+        Math.cos(time + particle.floatOffset) * floatRange * 0.5;
 
       // Keep particles within bounds
-      particle.x = Math.max(particle.radius, Math.min(canvas.width - particle.radius, particle.x));
-      particle.y = Math.max(particle.radius, Math.min(canvas.height - particle.radius, particle.y));
+      particle.x = Math.max(
+        particle.radius,
+        Math.min(canvas.width - particle.radius, particle.x)
+      );
+      particle.y = Math.max(
+        particle.radius,
+        Math.min(canvas.height - particle.radius, particle.y)
+      );
 
       // Draw particle with rotation
       ctx.save();
       ctx.translate(particle.x, particle.y);
       ctx.rotate(particle.rotation);
-      
+
       // Create gradient for each particle
       const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, particle.radius);
-      gradient.addColorStop(0, `hsla(${particle.hue}, 90%, 70%, ${particle.alpha})`);
-      gradient.addColorStop(0.7, `hsla(${particle.hue}, 80%, 50%, ${particle.alpha * 0.7})`);
+      gradient.addColorStop(
+        0,
+        `hsla(${particle.hue}, 90%, 70%, ${particle.alpha})`
+      );
+      gradient.addColorStop(
+        0.7,
+        `hsla(${particle.hue}, 80%, 50%, ${particle.alpha * 0.7})`
+      );
       gradient.addColorStop(1, `hsla(${particle.hue}, 70%, 30%, 0)`);
-      
+
       ctx.fillStyle = gradient;
       ctx.shadowColor = `hsla(${particle.hue}, 80%, 60%, 0.6)`;
       ctx.shadowBlur = 15;
-      
+
       // Draw diamond shape
       ctx.beginPath();
       ctx.moveTo(0, -particle.radius);
@@ -117,7 +149,7 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
       ctx.lineTo(-particle.radius * 0.7, 0);
       ctx.closePath();
       ctx.fill();
-      
+
       ctx.restore();
     }
 
@@ -129,7 +161,6 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
   };
-
   useEffect(() => {
     setup();
     const handleResize = () => {
@@ -141,7 +172,7 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setup, initParticles]);
 
   return (
     <div className={cn("relative h-full w-full", props.containerClassName)}>
@@ -159,4 +190,4 @@ export const FloatingParticles = (props: FloatingParticlesProps) => {
       </div>
     </div>
   );
-}; 
+};
