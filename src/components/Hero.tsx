@@ -103,7 +103,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ const Hero = () => {
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
-                className="py-6 px-8 border-blue-500/30 text-blue-400 hover:bg-blue-900/20 flex items-center gap-2"
+                className="py-6 px-16 border-blue-500/30 text-blue-400 hover:bg-blue-900/20 flex items-center gap-2"
                 onClick={handleResumeView}
               >
                 <FileText className="w-5 h-5 mr-2" />
@@ -125,7 +125,44 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="py-6 px-3 border-blue-500/30 text-blue-400 hover:bg-blue-900/20"
+                className="py-6 px-7 border-blue-500/30 text-blue-400 hover:bg-blue-900/20"
+                onClick={handleResumeDownload}
+                title="Download Resume"
+              >
+                <Download className="w-5 h-5" />
+              </Button>
+            </div>
+          </motion.div> */}
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+          >
+            {/* My Work Button */}
+            <Button className="py-4 px-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm flex items-center gap-2 rounded-lg">
+              <Eye className="w-5 h-5" />
+              <a href="#projects">My Work</a>
+            </Button>
+
+            {/* Resume Buttons Container */}
+            <div className="flex items-center gap-2">
+              {/* View Resume */}
+              <Button
+                variant="outline"
+                className="py-4 px-8 border border-blue-500/30 text-blue-400 hover:bg-blue-900/10 font-semibold text-sm flex items-center gap-2 rounded-lg"
+                onClick={handleResumeView}
+              >
+                <FileText className="w-5 h-5" />
+                Resume
+              </Button>
+
+              {/* Download Resume */}
+              <Button
+                variant="outline"
+                size="icon"
+                className="py-4 px-4 border border-blue-500/30 text-blue-400 hover:bg-blue-900/10 rounded-lg"
                 onClick={handleResumeDownload}
                 title="Download Resume"
               >
