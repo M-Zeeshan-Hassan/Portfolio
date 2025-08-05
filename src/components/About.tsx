@@ -13,7 +13,7 @@ const timelineData: TimelineItem[] = [
   {
     id: 1,
     year: "June – July, 2025",
-    title: "React Developer Intern, TechieTribe",
+    title: "React JS Intern, TechieTribe",
     description: `• Build reusable, efficient, and responsive components using React.js and JavaScript (ES6+).
 • Consume RESTful APIs to fetch and manage dynamic data in the application.
 • Implement client-side routing using libraries like React Router.
