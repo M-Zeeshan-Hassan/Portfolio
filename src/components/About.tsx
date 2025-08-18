@@ -15,7 +15,7 @@ const timelineData: TimelineItem[] = [
     year: "June – July, 2025",
     title: "React JS Intern, TechieTribe",
     description: `• Build reusable, efficient, and responsive components using React.js and JavaScript (ES6+).
-• Consume RESTful APIs to fetch and manage dynamic data in the application.
+• Use RESTful APIs to easily retrieve and handle dynamic data within the application.
 • Implement client-side routing using libraries like React Router.
 • Use Git & GitHub for source control, code reviews, and collaboration.`,
     type: "experience",
@@ -28,7 +28,6 @@ const timelineData: TimelineItem[] = [
 • Worked on backend integration with REST APIs to ensure smooth data communication.`,
     type: "experience",
   },
-
 ];
 
 const About = () => {
@@ -47,26 +46,32 @@ const About = () => {
               <p className="text-muted-foreground mb-4">
                 I'm a{" "}
                 <span className="font-semibold text-blue-400">
-                  Final Year IT Student | Web Developer
+                  IT Student | Full Stack Web Developer
                 </span>{" "}
-                passionate about building dynamic, user-focused web applications with clean, maintainable code.
+                passionate about building dynamic, user-focused web applications
+                with clean, maintainable code.
               </p>
               <p className="text-muted-foreground mb-4">
                 With hands-on experience in both{" "}
                 <span className="font-semibold text-blue-400">
-                  frontend and backend development
+                  frontend
                 </span>
-                , I specialize in creating responsive UIs with React.js and integrating them seamlessly with RESTful APIs using SQL Server.
+                {" and "}
+                <span className="font-semibold text-blue-400">
+                  backend
+                </span>
+                {" development, I specialize in creating responsive UIs with React.js and integrating them seamlessly with RESTful APIs using SQL Server."}
               </p>
               <p className="text-muted-foreground">
-                Currently, I'm learning backend using {" "}
+                Currently, I'm learning backend using{" "}
                 <span className="font-semibold text-blue-400">Node.js </span>
-                and {" "}
-                <span className="font-semibold text-blue-400">Express.js</span>
-                {" "}
-               to understand how servers and databases work together in full-stack applications.
+                and{" "}
+                <span className="font-semibold text-blue-400">
+                  Express.js
+                </span>{" "}
+                to understand how servers and databases work together in
+                full-stack applications.
               </p>
-             
             </CardContent>
           </Card>
         </div>
