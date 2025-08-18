@@ -4,15 +4,6 @@ import { motion } from "framer-motion";
 const certificatesData = [
   {
     id: 1,
-    title: "Meta Front-End Developer",
-    issuer: "Meta (Coursera)",
-    issueDate: "July 2023",
-    certificateUrl: "https://coursera.org/verify/Z2JW4BLKWYDS",
-    image: "/lovable-uploads/meta-frontend-cert.png",
-    skills: ["HTML", "CSS", "JavaScript", "React"],
-  },
-  {
-    id: 2,
     title: " Programming with JavaScript",
     issuer: "Meta (Coursera)",
     issueDate: "June 2024",
@@ -21,16 +12,26 @@ const certificatesData = [
     skills: ["JavaScript"],
   },
   {
-    id: 3,
-    title: "100 Days of Code: The Complete Python Pro Bootcamp",
-    issuer: "Udemy",
-    issueDate: "Sep 2022",
+    id: 2,
+    title: "SQL and Relational Databases 101",
+    issuer: "IBM (Cognitive Class)",
+    issueDate: "May 2024",
     certificateUrl:
-      "https://www.udemy.com/certificate/UC-7e31782e-37ae-4b8c-9c83-4ebc272eff94",
-    image: "/lovable-uploads/Python.png",
-    skills: ["Python"],
+      "https://courses.cognitiveclass.ai/certificates/1d60651ef8b340ad8d25b2e5c938842d",
+    image: "/lovable-uploads/sql.png",
+
+    skills: ["SQL", "Relational Databases"],
   },
 
+  {
+    id: 3,
+    title: "Meta Front-End Developer",
+    issuer: "Meta (Coursera)",
+    issueDate: "July 2023",
+    certificateUrl: "https://coursera.org/verify/Z2JW4BLKWYDS",
+    image: "/lovable-uploads/meta-frontend-cert.png",
+    skills: ["HTML", "CSS", "JavaScript", "React"],
+  },
   {
     id: 4,
     title: "Introduction to Cybersecurity Tools & Cyber Attacks",
@@ -44,15 +45,15 @@ const certificatesData = [
 
   {
     id: 5,
-    title: "SQL and Relational Databases 101",
-    issuer: "IBM (Cognitive Class)",
-    issueDate: "May 2024",
+    title: "100 Days of Code: The Complete Python Pro Bootcamp",
+    issuer: "Udemy",
+    issueDate: "Sep 2022",
     certificateUrl:
-      "https://courses.cognitiveclass.ai/certificates/1d60651ef8b340ad8d25b2e5c938842d",
-    image: "/lovable-uploads/sql.png",
-
-    skills: ["SQL", "Relational Databases"],
+      "https://www.udemy.com/certificate/UC-7e31782e-37ae-4b8c-9c83-4ebc272eff94",
+    image: "/lovable-uploads/Python.png",
+    skills: ["Python"],
   },
+
   // Add more certificates as needed
 ];
 
