@@ -6,13 +6,13 @@ import { Github, Linkedin, Eye, FileText, X, Download } from "lucide-react";
 
 const Hero = () => {
   const handleResumeView = () => {
-    window.open("/Resume-Zeeshan.pdf", "_blank");
+    window.open("/Resume-Zeehsan-Hassan.pdf", "_blank");
   };
 
   const handleResumeDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Resume-Zeeshan.pdf";
-    link.download = "Resume-Zeeshan.pdf";
+    link.href = "/Resume-Zeehsan-Hassan.pdf";
+    link.download = "Resume-Zeehsan-Hassan.pdf";
     link.click();
   };
 
