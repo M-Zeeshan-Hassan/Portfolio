@@ -5,16 +5,16 @@ import AnimatedText from "./AnimatedText";
 import { Github, Linkedin, Eye, FileText, X, Download } from "lucide-react";
 
 const Hero = () => {
-  const handleResumeView = () => {
-    window.open("/Resume-Zeeshan-Hassan.pdf", "_blank");
-  };
+  // const handleResumeView = () => {
+  //   window.open("/Resume-Zeeshan-Hassan.pdf", "_blank");
+  // };
 
-  const handleResumeDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Resume-Zeeshan-Hassan.pdf";
-    link.download = "Resume-Zeeshan-Hassan.pdf";
-    link.click();
-  };
+  // const handleResumeDownload = () => {
+  //   const link = document.createElement("a");
+  //   link.href = "/Resume-Zeeshan-Hassan.pdf";
+  //   link.download = "Resume-Zeeshan-Hassan.pdf";
+  //   link.click();
+  // };
 
   return (
     <section
@@ -149,17 +149,17 @@ const Hero = () => {
             {/* Resume Buttons Container */}
             <div className="flex items-center gap-2">
               {/* View Resume */}
-              <Button
+              {/* <Button
                 variant="outline"
                 className="py-4 px-8 border border-blue-500/30 text-blue-400 hover:bg-blue-900/10 font-semibold text-sm flex items-center gap-2 rounded-lg"
                 onClick={handleResumeView}
               >
                 <FileText className="w-5 h-5" />
                 Resume
-              </Button>
+              </Button> */}
 
               {/* Download Resume */}
-              <Button
+              {/* <Button
                 variant="outline"
                 size="icon"
                 className="py-4 px-4 border border-blue-500/30 text-blue-400 hover:bg-blue-900/10 rounded-lg"
@@ -167,7 +167,7 @@ const Hero = () => {
                 title="Download Resume"
               >
                 <Download className="w-5 h-5" />
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
 
