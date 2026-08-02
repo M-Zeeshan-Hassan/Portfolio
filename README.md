@@ -45,7 +45,7 @@ A modern, responsive portfolio website showcasing professional experience, proje
 1. Clone the repository:
 
    ```bash
-   git clone    git clone https://https://github.com/M-Zeeshan-Hassan/Portfolio
+   git clone https://https://github.com/M-Zeeshan-Hassan/Portfolio
    ```
 
 2. Navigate to the project directory:
