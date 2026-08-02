@@ -1,44 +1,33 @@
-# 🚀 Professional Portfolio
+# 🚀 Zeeshan Hassan — Portfolio
 
-<div align="center">
+A responsive portfolio website showcasing my experience as a Software Engineer — full-stack web development, AI-integrated tools, and workflow automation (n8n / Make.com / Zapier).
 
-![Portfolio Preview](https://img.shields.io/badge/Portfolio-Live-blue)
-![React](https://img.shields.io/badge/React-18.2.0-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue)
-![Tailwind](https://img.shields.io/badge/Tailwind-3.3.0-blue)
-
-A modern, responsive portfolio website showcasing professional experience, projects, and technical expertise in a clean and interactive interface.
-
-</div>
+**Live site:** https://mzh-portfolio.netlify.app
 
 ## ✨ Features
 
-- 🎨 **Responsive Design**: Optimized for all screen sizes and devices
-- 💫 **Modern UI/UX**: Clean and professional interface with smooth animations
-- 🎮 **Interactive Components**: Engaging user interactions and transitions
-- 📝 **Blog System**: Integrated blog platform with markdown support
-- 🏆 **Project Showcase**: Dynamic project display with detailed information
-- 📬 **Contact Section**: Professional contact form with validation
-- 🤖 **AI Lab**: Interactive AI demonstration section
-- 🌙 **Dark Mode**: Elegant dark theme optimized for readability
+- 🎨 Fully responsive design across devices
+- 💫 Smooth animations and transitions with Framer Motion
+- 🏆 Project showcase with live demo and source links
+- 📬 Contact form for freelance/client inquiries
+- 🌙 Dark theme UI
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: React with TypeScript
-- **Styling**: Tailwind CSS with custom animations
-- **State Management**: React Query
-- **Routing**: React Router
-- **Animations**: Framer Motion
-- **UI Components**: Custom components with shadcn/ui
-- **Markdown Support**: React Markdown
-- **Icons**: Lucide Icons
+- **Frontend Framework:** React + TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **UI Components:** shadcn/ui
+- **Icons:** Lucide Icons
+- **Routing:** React Router
+- **Data fetching:** React Query
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js (v18 or higher)
+- npm
 
 ### Installation
 
@@ -47,85 +36,56 @@ A modern, responsive portfolio website showcasing professional experience, proje
    ```bash
    git clone https://github.com/M-Zeeshan-Hassan/Portfolio.git
    ```
-
 2. Navigate to the project directory:
-
-   ```bash
-   cd portfolio
    ```
-
+   cd Portfolio
+   ```
 3. Install dependencies:
-
-   ```bash
+   ```
    npm install
    ```
-
 4. Start the development server:
-
-   ```bash
+   ```
    npm run dev
    ```
-
-5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+5. Open http://localhost:5173 in your browser.
 
 ## 📁 Project Structure
 
 ```
-portfolio/
+Portfolio/
 ├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/         # Page components
-│   ├── lib/           # Utility functions and data
-│   ├── styles/        # Global styles and Tailwind config
-│   └── types/         # TypeScript type definitions
-├── public/            # Static assets
-└── package.json       # Project dependencies and scripts
+│   ├── components/     # Section components (Hero, About, Projects, Contact, etc.)
+│   │   └── ui/         # Reusable UI primitives (shadcn/ui based)
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Route-level pages
+│   └── index.css        # Global styles
+├── public/               # Static assets and project images
+└── package.json
 ```
 
 ## 🎨 Customization
 
 ### Adding Projects
 
-Edit the project data in `src/lib/project-data.ts` to add or modify projects.
-
-### Modifying Blog Posts
-
-Update blog content in `src/lib/blog-data.ts` to manage blog posts.
+Project entries live directly in `src/components/Projects.tsx` inside the `projectsData` array — add an object with `title`, `description`, `image`, `tags`, `demoUrl`, and `githubUrl`.
 
 ### Styling
 
-The project uses Tailwind CSS for styling. Custom styles can be added in:
-
-- `src/styles/globals.css`
-- `tailwind.config.js`
+Built with Tailwind CSS. Global styles live in `src/index.css`; Tailwind config is in `tailwind.config.ts`.
 
 ## 📦 Deployment
 
-The project can be deployed to any static hosting service:
-
 1. Build the project:
-
-   ```bash
+   ```
    npm run build
    ```
-
-2. Deploy the `dist` directory to your preferred hosting service.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
+2. Deploy the `dist` directory to your preferred static hosting service (currently deployed on Netlify).
 
 ## 📞 Contact
 
-For any inquiries or suggestions, please reach out through the contact form on the portfolio website.
+For freelance work, collaborations, or questions — reach out via the contact form on the site or at mzhassan980@gmail.com.
 
 ---
 
-<div align="center">
 Made with ❤️ by Zeeshan Hassan
-</div>
