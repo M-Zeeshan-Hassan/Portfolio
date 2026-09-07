@@ -34,6 +34,16 @@ const certificatesData = [
   },
   {
     id: 4,
+    title: "Crash Course on Python",
+    issuer: "Google (Coursera)",
+    issueDate: "June 2023",
+    certificateUrl: "https://www.coursera.org/verify/CD4ZZD37HT5U",
+    image: "/lovable-uploads/gpython.png",
+
+    skills: ["Python"],
+  },
+  {
+    id: 5,
     title: "Introduction to Cybersecurity Tools & Cyber Attacks",
     issuer: "IBM (Coursera)",
     issueDate: "March 2023",
@@ -42,9 +52,8 @@ const certificatesData = [
 
     skills: ["Linux"],
   },
-
   {
-    id: 5,
+    id: 6,
     title: "100 Days of Code: The Complete Python Pro Bootcamp",
     issuer: "Udemy",
     issueDate: "Sep 2022",

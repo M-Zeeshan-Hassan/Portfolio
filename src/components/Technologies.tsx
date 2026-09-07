@@ -274,6 +274,11 @@ const techGroups = [
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
         docs: "https://mui.com/",
       },
+      {
+        name: "Next.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        docs: "https://nextjs.org/docs",
+      },
     ],
   },
   {
@@ -293,6 +298,11 @@ const techGroups = [
         name: "REST",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/api/api-original-wordmark.svg",
         docs: "https://restfulapi.net/",
+      },
+      {
+        name: "Firebase",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+        docs: "https://firebase.google.com/docs",
       },
     ],
   },
@@ -345,14 +355,14 @@ const techGroups = [
         docs: "https://git-scm.com/doc",
       },
       {
+        name: "Docker",
+        icon: "/icons/docker.png",
+        docs: "https://docs.docker.com/",
+      },
+      {
         name: "Vercel",
         icon: "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
         docs: "https://vercel.com/docs",
-      },
-      {
-        name: "Netlify",
-        icon: "/icons/netlify.png",
-        docs: "https://docs.netlify.com/",
       },
       {
         name: "Postman",

@@ -197,23 +197,6 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "AI Career Insight",
-    description:
-      "GPT-4-powered web app that analyzes resumes for job role suggestions, tailored improvement tips, and likely interview questions, and stores past results for the user.",
-    image: "/lovable-uploads/career.png",
-    tags: [
-      "React.js",
-      "Tailwind CSS",
-      "React Router",
-      "Axios",
-      "React Dropzone",
-      "OpenAI API",
-    ],
-    demoUrl: "http://ai-career-insights.netlify.app/",
-    githubUrl: "https://github.com/M-Zeeshan-Hassan/AI-Career-Insight",
-  },
-  {
-    id: 3,
     title: "AI Smart Tube",
     description:
       "Analytics tool that compares short vs. long-form YouTube videos using charts and insights, helping creators understand what's working without watching every video end to end.",
@@ -233,7 +216,7 @@ const projectsData = [
     githubUrl: "https://github.com/M-Zeeshan-Hassan/AI-Smart-Tube",
   },
   {
-    id: 4,
+    id: 3,
     title: "Camp & Fire",
     description:
       "E-commerce storefront for outdoor and camping gear, built with a clean product browsing experience and Material UI components.",
@@ -241,6 +224,23 @@ const projectsData = [
     tags: ["React", "CSS", "JavaScript", "Material UI"],
     demoUrl: "https://camp-and-fire.netlify.app/",
     githubUrl: "https://github.com/M-Zeeshan-Hassan/Camp-and-Fire",
+  },
+  {
+    id: 4,
+    title: "AI Career Insight",
+    description:
+      "GPT-4-powered web app that analyzes resumes for job role suggestions, tailored improvement tips, and likely interview questions, and stores past results for the user.",
+    image: "/lovable-uploads/career.png",
+    tags: [
+      "React.js",
+      "Tailwind CSS",
+      "React Router",
+      "Axios",
+      "React Dropzone",
+      "OpenAI API",
+    ],
+    demoUrl: "http://ai-career-insights.netlify.app/",
+    githubUrl: "https://github.com/M-Zeeshan-Hassan/AI-Career-Insight",
   },
   {
     id: 5,
