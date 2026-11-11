@@ -260,12 +260,21 @@ const Hero = () => {
           </motion.h2>
 
           <motion.p
-            className="text-md mb-10 text-gray-500"
+            className="text-md mb-2 text-gray-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
             Software Engineer — Web Apps, AI Integrations & Workflow Automation
+          </motion.p>
+
+          <motion.p
+            className="text-sm mb-10 text-gray-500"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
+            Open to full-time roles · Lahore / Remote
           </motion.p>
 
           {/* Social Icons above buttons */}
@@ -317,17 +326,23 @@ const Hero = () => {
             transition={{ delay: 0.9, duration: 0.6 }}
           >
             {/* My Work Button */}
-            <Button className="py-4 px-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm flex items-center gap-2 rounded-lg">
-              <Eye className="w-5 h-5" />
-              <a href="#projects">My Work</a>
+            <Button
+              asChild
+              className="py-4 px-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm flex items-center gap-2 rounded-lg"
+            >
+              <a href="#projects">
+                <Eye className="w-5 h-5" />
+                My Work
+              </a>
             </Button>
 
-            {/* Hire Me Button - links to contact section */}
+            {/* Contact Me Button - links to contact section */}
             <Button
+              asChild
               variant="outline"
               className="py-4 px-8 border border-blue-500/30 text-blue-400 hover:bg-blue-900/10 font-semibold text-sm flex items-center gap-2 rounded-lg"
             >
-              <a href="#contact">Hire Me</a>
+              <a href="#contact">Contact me</a>
             </Button>
 
             {/* Resume Buttons Container */}

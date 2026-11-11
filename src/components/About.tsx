@@ -15,32 +15,34 @@ const timelineData: TimelineItem[] = [
     id: 1,
     year: "May 2026 – October 2026",
     title: "Full Stack Developer, Eleven Developers",
-    description: `• Automating repetitive workflows to eliminate busywork and help businesses run on autopilot.
-• Building smart AI voice agents and chatbots that handle customer conversations naturally and efficiently.`,
+    description: `• Built AI voice agents with Vapi and OpenAI that answered customer enquiries and booked appointments for 2 client businesses.
+• Automated lead capture, calendar and inbox workflows with n8n and Make, removing about 5 hours a week of manual data entry for clients.
+• Delivered 2 automation projects end to end, from mapping the manual process to deployment and handover.`,
     type: "experience",
   },
   {
     id: 2,
     year: "August 2025 – March 2026",
     title: "Associate Software Engineer, Techietribe",
-    description: `• Create and maintain React applications that work well on any device and run smoothly without slowing down.
-• Collaborate with design and engineering teams to ensure the successful delivery of projects from concept to completion.`,
+    description: `• Built and maintained 2 production React and TypeScript applications for clients across corporate websites and web apps.
+• Improved performance of a client web application with code-splitting and lazy loading, cutting load time from about 6s to 3s.
+• Shipped 10+ features with designers and backend engineers, from requirements to production release.`,
     type: "experience",
   },
   {
     id: 3,
     year: "June – July 2025",
     title: "React JS Intern, Techietribe",
-    description: `• Built reusable, responsive React components that made interfaces feel smooth and intuitive to use.
-• Worked closely with cross-functional teams via Git/GitHub, integrating third-party APIs while keeping the codebase clean through regular refactoring.`,
+    description: `• Built 25+ reusable, responsive React components used across the company's internal product.
+• Integrated the Stripe payment API and refactored legacy components through a Git pull-request workflow.`,
     type: "experience",
   },
   {
     id: 4,
     year: "September 2024 – January 2025",
     title: "Web Developer, Softnerd Technologies",
-    description: `• Developed and maintained client websites, setting up clean, efficient databases using SQL Server and MySQL to organize and secure their data.
-• Handled these projects end-to-end, writing the REST APIs needed to connect the websites to the SQL backend for smooth, lag-free performance.`,
+    description: `• Built and maintained 4 client websites end to end, from database design to deployment.
+• Designed relational schemas in SQL Server and MySQL, and wrote the REST APIs connecting each site to its data.`,
     type: "experience",
   },
 ];
