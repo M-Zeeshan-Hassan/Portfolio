@@ -1,8 +1,12 @@
 import React from "react";
 import { PinContainer } from "./ui/PinContainer";
 import { Github, ExternalLink } from "lucide-react";
-import { MotionUp } from "./ui/Motion-Up";
-import { motion } from "framer-motion"; // ✅ import for animation
+import {
+  FadeUp,
+  HoverLift,
+  Stagger,
+  StaggerItem,
+} from "./ui/motion-primitives";
 
 const projectsData = [
   {
@@ -52,7 +56,7 @@ const projectsData = [
     title: "SmartBook – AI Booking with WhatsApp",
     description:
       "Multi-tenant SaaS that lets service businesses take bookings on WhatsApp and the web with no customer login — replacing missed calls and manual scheduling with one live owner dashboard.",
-    image: "/lovable-uploads/Simplify.jpeg",
+    image: "/lovable-uploads/smart.png",
     tags: [
       "Python",
       "FastAPI",
@@ -66,7 +70,7 @@ const projectsData = [
       "Docker",
     ],
     demoUrl: "",
-    githubUrl: "https://github.com/M-Zeeshan-Hassan/SIMPLIFY",
+    githubUrl: "https://github.com/M-Zeeshan-Hassan/smartbook-ai",
   },
   {
     id: 4,
@@ -156,17 +160,14 @@ const projectsData = [
 const Projects = () => {
   return (
     <section id="projects" className="section-container relative">
-      <h2 className="section-title mb-8">Projects Showcase</h2>
+      <FadeUp>
+        <h2 className="section-title mb-8">Projects Showcase</h2>
+      </FadeUp>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 auto-rows-fr">
-        {projectsData.map((project, index) => (
-          <MotionUp key={project.id} delay={index * 0.1}>
-            {/* ✅ Zoom on hover using motion.div */}
-            <motion.div
-              className="h-full"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
+      <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 auto-rows-fr">
+        {projectsData.map((project) => (
+          <StaggerItem key={project.id} className="h-full">
+            <HoverLift className="h-full">
               <div className="relative bg-[#0f0f0f] text-white rounded-2xl p-5 shadow-xl border border-neutral-800 hover:border-purple-500 hover:shadow-purple-500/20 transition-all duration-300 flex flex-col h-full group">
                 {/* Image */}
                 <img
@@ -226,10 +227,10 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-            </motion.div>
-          </MotionUp>
+            </HoverLift>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
     </section>
   );
 };

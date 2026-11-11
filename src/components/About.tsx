@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { FadeUp, Stagger, StaggerItem } from "@/components/ui/motion-primitives";
 
 interface TimelineItem {
   id: number;
@@ -12,14 +13,22 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
   {
     id: 1,
-    year: "August 2025 – June 2026",
+    year: "May 2026 – October 2026",
+    title: "Full Stack Developer, Eleven Developers",
+    description: `• Automating repetitive workflows to eliminate busywork and help businesses run on autopilot.
+• Building smart AI voice agents and chatbots that handle customer conversations naturally and efficiently.`,
+    type: "experience",
+  },
+  {
+    id: 2,
+    year: "August 2025 – March 2026",
     title: "Associate Software Engineer, Techietribe",
     description: `• Create and maintain React applications that work well on any device and run smoothly without slowing down.
 • Collaborate with design and engineering teams to ensure the successful delivery of projects from concept to completion.`,
     type: "experience",
   },
   {
-    id: 2,
+    id: 3,
     year: "June – July 2025",
     title: "React JS Intern, Techietribe",
     description: `• Built reusable, responsive React components that made interfaces feel smooth and intuitive to use.
@@ -27,7 +36,7 @@ const timelineData: TimelineItem[] = [
     type: "experience",
   },
   {
-    id: 3,
+    id: 4,
     year: "September 2024 – January 2025",
     title: "Web Developer, Softnerd Technologies",
     description: `• Developed and maintained client websites, setting up clean, efficient databases using SQL Server and MySQL to organize and secure their data.
@@ -39,56 +48,74 @@ const timelineData: TimelineItem[] = [
 const About = () => {
   return (
     <section id="about" className="section-container">
-      <h2 className="section-title">About Me</h2>
+      <FadeUp>
+        <h2 className="section-title">About Me</h2>
+      </FadeUp>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Bio */}
-        <div className="lg:col-span-1">
+        <FadeUp className="lg:col-span-1">
           <Card className="h-full glass-card rounded-xl border-muted">
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
-                Who I Am
+              <h3 className="text-center text-xl font-semibold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
+                What I Do
               </h3>
               <p className="text-muted-foreground mb-4">
-                I am a{" "}
+                I’m a{" "}
                 <span className="font-semibold text-blue-400">
-                  Software Engineer
+                  Full-Stack Software Engineer
                 </span>{" "}
-                who builds full-stack web apps that look great, run fast, and
-                save teams time.
+                who builds AI-powered products and automations that take
+                repetitive work off a team’s plate.
               </p>
               <p className="text-muted-foreground mb-4">
-                On the development side, I use{" "}
+                On the development side, I build responsive apps with{" "}
                 <span className="font-semibold text-blue-400">
-                  React, TypeScript, Node.js,
+                  React, TypeScript, and Next.js,
+                </span>{" "}
+                and backends with{" "}
+                <span className="font-semibold text-blue-400">
+                  Python (FastAPI), Node.js,
                 </span>{" "}
                 and databases like{" "}
                 <span className="font-semibold text-blue-400">
-                  MongoDB and MySQL
+                  PostgreSQL, MySQL, and MongoDB.
                 </span>{" "}
-                to bring complete products to life—from the frontend UI to the
-                backend infrastructure.
+                I’ve shipped{" "}
+                <span className="font-semibold text-blue-400">Visly,</span> an
+                AI SaaS used by 50+ LinkedIn creators, and{" "}
+                <span className="font-semibold text-blue-400">SmartBook,</span>{" "}
+                a multi-tenant booking platform with a WhatsApp AI agent.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                On the automation side, I use{" "}
+                <span className="font-semibold text-blue-400">
+                  n8n, Make, OpenAI, and Vapi
+                </span>{" "}
+                to connect forms, calendars, and inboxes, and to build AI voice
+                agents that handle enquiries and appointment bookings.
               </p>
               <p className="text-muted-foreground">
-                On the automation side, I use{" "}
-                <span className="font-semibold text-blue-400">n8n, Make,</span>{" "}
-                and <span className="font-semibold text-blue-400">OpenAI</span>{" "}
-                to wire up APIs and intelligent tools. My goal is simple: I
-                build the software and systems that handle the busywork, so your
-                team doesn't have to.
+                Before choosing tools, I start with the problem: what takes too
+                much time and where information gets lost. Through{" "}
+                <span className="font-semibold text-blue-400">
+                  Eleven Developers,
+                </span>{" "}
+                I help businesses turn that into practical systems that are
+                simple to maintain.
               </p>
             </CardContent>
           </Card>
-        </div>
+        </FadeUp>
 
         {/* Timeline */}
         <div className="lg:col-span-2">
           <div className="relative">
             <div className="absolute left-6 top-5 bottom-5 w-1 bg-gradient-to-b from-blue-400 to-purple-500 shadow-lg rounded-full"></div>
 
-            <div className="space-y-16">
+            <Stagger className="space-y-16">
               {timelineData.map((item) => (
-                <div
+                <StaggerItem
                   key={item.id}
                   className="relative pl-16 flex items-start group"
                 >
@@ -109,14 +136,19 @@ const About = () => {
                       <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground whitespace-pre-line">
-                        {item.description}
-                      </p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        {item.description.split("\n").map((line, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span aria-hidden="true">•</span>
+                            <span>{line.replace(/^•\s*/, "")}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </CardContent>
                   </Card>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </div>
       </div>

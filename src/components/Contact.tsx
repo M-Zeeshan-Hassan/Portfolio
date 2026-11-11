@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,7 +14,7 @@ import {
   Code2,
   MessageSquare,
 } from "lucide-react";
-import AnimatedCard from "./AnimatedCard";
+import { FadeUp, Stagger, StaggerItem } from "./ui/motion-primitives";
 import {
   Card,
   CardHeader,
@@ -309,15 +308,19 @@ const ContactForm = () => {
 const Contact = () => {
   return (
     <section id="contact" className="section-container">
-      <div className="text-center mb-12">
+      <FadeUp className="text-center mb-12">
         <h2 className="section-title">Let's connect</h2>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      </FadeUp>
+      <Stagger className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
         {/* Left: Professional Summary, Contact Methods, Coding Platforms */}
-        <ProfessionalSummary />
+        <StaggerItem className="h-full">
+          <ProfessionalSummary />
+        </StaggerItem>
         {/* Right: Contact Form */}
-        <ContactForm />
-      </div>
+        <StaggerItem className="h-full">
+          <ContactForm />
+        </StaggerItem>
+      </Stagger>
     </section>
   );
 };
